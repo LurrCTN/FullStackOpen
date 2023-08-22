@@ -52,11 +52,13 @@ const App = () => {
     exercises: 14
   }
 
+
   return (
     <div>
       <Header course={course}/>
       <Content part1={part1.name} exercise1={part1.exercises} part2={part2.name} exercise2={part2.exercises} part3={part3.name} exercise3={part3.exercises}/>
       <Total totalExercises={part1.exercises + part2.exercises + part3.exercises} />
+
     </div>
   )
 }
