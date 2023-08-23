@@ -5,21 +5,41 @@ const Title = () => <h1>Give feedback</h1>
 
 const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>
 
-const Statistics = (props) => {
-  console.log(props)
-  const {good, bad, neutral} = props
+const Statistics = ( {good, bad, neutral}) => {
+  if (good === 0 && bad === 0 && neutral === 0) {
+    return (
+      <div>
+        <p>
+          No feedback given
+        </p>
+      </div>
+    )
+  }
   return (
-    <div>
-      <p>
-        good {good}
-      </p>
-      <p>
-        neutral {neutral}
-      </p>
-      <p>
-        bad {bad}
-      </p>
-    </div>
+    <table>
+      <tbody>
+        <StatisticsLine text="Good :" value={good} />
+        <StatisticsLine text="Neutral :" value={neutral} />
+        <StatisticsLine text="Bad :" value={bad} />
+        <StatisticsLine text="All :" value={bad + good + neutral} />
+        <StatisticsLine text="Average :" value={(bad + good + neutral) / 3} />
+        {console.log(good / (bad + neutral))}
+        <StatisticsLine text="Positive :" value={(good / (bad + neutral + good) * 100 + "%")} />
+      </tbody>
+    </table>
+  )
+}
+
+const StatisticsLine = ({ text, value }) => {
+  return (
+    <>
+    <tr>
+      <td>
+      {text}
+      {value}
+      </td>
+    </tr>
+  </>
   )
 }
 
