@@ -23,7 +23,6 @@ const Statistics = ( {good, bad, neutral}) => {
         <StatisticsLine text="Bad :" value={bad} />
         <StatisticsLine text="All :" value={bad + good + neutral} />
         <StatisticsLine text="Average :" value={(bad + good + neutral) / 3} />
-        {console.log(good / (bad + neutral))}
         <StatisticsLine text="Positive :" value={(good / (bad + neutral + good) * 100 + "%")} />
       </tbody>
     </table>
@@ -36,6 +35,8 @@ const StatisticsLine = ({ text, value }) => {
     <tr>
       <td>
       {text}
+      </td>
+      <td>
       {value}
       </td>
     </tr>
