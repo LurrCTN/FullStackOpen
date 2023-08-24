@@ -76,8 +76,17 @@
     Parte 0
   </h3>
   <p>
-    en esta parte se nos introduce al bootcamp y empezamos a familiarizarnos con HTML CSS y JavaScript se nos 
+    En la primera parte se nos introduce al bootcamp y empezamos a familiarizarnos con HTML CSS y JavaScript se nos 
     nombran recursos como JQuery y React, terminos como AJAX y DOM, conceptos como la fatiga de Javascript entre otras cosas.
-    En esta parte lo que se busca es que te familiarices con HTML, CSS, que conozcas el mundo de Javascript y su entorno tan dinamico
+    Busca que te familiarices con HTML, CSS, que conozcas el mundo de Javascript y su entorno tan dinamico.
+  </p>
+</h2>
+<h2 id="part1">
+  <h3>
+    Parte 1
+  </h3>
+  <p>
+    En la segunda parte de este curso se nos introduce a la biblioteca mas famosa de Javascript probablemente, el famoso React, aprendemos a crear componentes, manejar eventos, usar estados y mas!
+    tambien se nos introduce a Javascript (despues de React lo cual lo considero raro) de una manera dinamica y consisa, esta parte estuvo mas cargada y a la vez mas interesante por todo su contenido de alto valor.
   </p>
 </h2>
