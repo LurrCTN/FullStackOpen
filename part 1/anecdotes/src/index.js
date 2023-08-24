@@ -2,6 +2,14 @@ import React, { useState } from 'react'
 // import ReactDOM from 'react-dom'
 import { createRoot } from "react-dom/client"
 
+const Title = ({text}) => {
+  return (
+    <h1>
+      {text}
+    </h1>
+  )
+}
+
 const Button = ({ handleClick, text }) => {
   return (
     <button onClick={handleClick}>
@@ -10,30 +18,63 @@ const Button = ({ handleClick, text }) => {
   )
 }
 
+const Message = ({text}) => {
+  return (
+    <p>
+      {text}
+    </p>
+  )
+}
+
 
 const App = (props) => {
   const [selected, setSelected] = useState(0)
   const [selectedVote, setSelectedVote] = useState(0)
 
-  const handleAnecdote = () => {
+  const handleRandomAnecdote = () => {
     const random = () => {
       return Math.floor(Math.random() * anecdotes.length)
     }
     setSelected(random)
   }
 
-  const handleVotes = () => setSelectedVote(votes[selected]++)
+  const handleNextAnecdote = () => {
+    if (selected >= anecdotes.length - 1){
+      console.log("reset ", selected)
+      setSelected(0)
+      return
+    }
+    setSelected(selected + 1)
+  }
+
+  const handleVotes = () => {
+      setSelectedVote(votes[selected] += 1)
+    }
+
+    const hasMoreVotes = () => {
+      let moreVoted = 0; 
+      for (let i = 0; i < anecdotes.length; i++) {
+        if (votes[i] > votes[moreVoted]) {
+          console.log("El más votado tiene el índice ", i);
+          moreVoted = i;
+        }
+      }
+    
+      return anecdotes[moreVoted];
+    };
 
   return (
     <div>
+      <Title text="Anecdote of the day" />
+      <Message text={props.anecdotes[selected]} />
       <div>
-      {props.anecdotes[selected]}
-      </div>
       has {selectedVote} votes
-      <div>
       </div>
       <Button handleClick={handleVotes} text="vote" />
-      <Button handleClick={handleAnecdote} text="next anecdote" />
+      <Button handleClick={handleNextAnecdote} text="Next anecdote" />
+      <Button handleClick={handleRandomAnecdote} text="Random anecdote" />
+      <Title text="Anecdote with most votes" />
+      <Message text={hasMoreVotes()}/>
     </div>
   )
 }
