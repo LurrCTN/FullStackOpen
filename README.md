@@ -12,7 +12,7 @@
 
 <div display="flex" align="center" >
   <img class="badges" src="https://img.shields.io/badge/ESTADO-EN%20PROCESO-green">
-  <img class="badges" src="https://img.shields.io/badge/PARTE_EN_DESARROLLO-Part1-green">
+  <img class="badges" src="https://img.shields.io/badge/PARTE_EN_DESARROLLO-Part2-green">
 </div>
 
 <h2 id="index">Indice</h2>
